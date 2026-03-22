@@ -1,6 +1,5 @@
 
-set -l grc_plugin_execs configure env gcc ifconfig lsof mount netstat \
-    sysctl uptime vmstat whois
+set -l grc_plugin_execs ping dockerps dockerstats
 
 if command -s cgrc > /dev/null
     for executable in $grc_plugin_execs
