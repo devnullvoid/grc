@@ -41,6 +41,22 @@ function __grc_sync_cgrc_configs
     __grc_refresh_cgrc_configs
 end
 
+function __grc_sync_cgrc_configs_if_needed
+    command -sq cgrc
+    or return 0
+
+    __grc_refresh_cgrc_configs
+
+    for config_path in $__grc_asset_config_dir/*
+        set -l config_name (path basename $config_path)
+        contains -- $config_name $__grc_available_cgrc_configs
+        or begin
+            __grc_sync_cgrc_configs
+            return 0
+        end
+    end
+end
+
 function __grc_remove_cgrc_configs
     set -l user_dir (__grc_cgrc_user_dir)
     or return 0
@@ -120,6 +136,7 @@ function __grc_uninstall --on-event cgrc_uninstall
 end
 
 __grc_refresh_cgrc_configs
+__grc_sync_cgrc_configs_if_needed
 
 set -l __grc_wrapped_execs $__grc_grc_fallback_execs logcat nginx ping prio docker
 

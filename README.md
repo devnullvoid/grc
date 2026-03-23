@@ -18,6 +18,8 @@ fisher add orefalo/grc
 
 Fisher installs the plugin files and the plugin now copies its bundled `cgrc` configs into `cgrc --location-user` during install and update events.
 
+If `cgrc` is installed after the plugin, the next Fish startup will copy the bundled configs automatically.
+
 If you already had the plugin installed before this change, run:
 
 ```
