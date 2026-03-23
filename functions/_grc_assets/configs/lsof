@@ -1,3 +1,4 @@
+desc=lsof
 # device major minor numbers
 regexp=\s(\d+),(\d+)\s
 colours=unchanged,bright_yellow ,yellow

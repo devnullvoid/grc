@@ -1,3 +1,4 @@
+desc=gcc
 #
 regexp=\b(g?cc|[gc]\+\+|g?as|ld)\b
 colours=white bold

@@ -1,3 +1,4 @@
+desc=sysctl
 # Main & Last key
 regexp=(\w+)\.(\S+) = ?(.+)?$
 colours=default,green,cyan,yellow

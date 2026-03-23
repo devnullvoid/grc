@@ -1,3 +1,4 @@
+desc=configure
 # cache functions
 regexp=\b(loading|updating|creating) cache\b
 colours=yellow bold

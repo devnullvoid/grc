@@ -1,3 +1,4 @@
+desc=netstat
 # ip number
 regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
 colours=magenta

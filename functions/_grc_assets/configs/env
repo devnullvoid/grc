@@ -1,3 +1,4 @@
+desc=env
 # Main
 regexp=^([^=]+)(=)(.*)$
 colours=default,cyan,white,yellow

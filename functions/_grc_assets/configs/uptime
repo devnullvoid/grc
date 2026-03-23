@@ -1,3 +1,4 @@
+desc=uptime
 # Regular Up
 regexp=\sup(?: (\d+) days?,)? +(\d+ min|\d+:\d+)(?=,)
 colours=green,bold green, bold green

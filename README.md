@@ -6,19 +6,38 @@
 
 Allows the colorization of commands.
 
-This version uses cgrc, the rust port of grc, please install it first
+This plugin prefers `cgrc` configs first and falls back to `grc` for commands not supported by `cgrc`.
 
 ## Install
 
 With [fisher]
 
-```
+``` 
 fisher add orefalo/grc
+```
+
+Fisher installs the plugin files and the plugin now copies its bundled `cgrc` configs into `cgrc --location-user` during install and update events.
+
+If you already had the plugin installed before this change, run:
+
+```
+fisher update orefalo/grc
 ```
 
 ## Usage
 
-Make sure to install the official grc command: <https://github.com/garabik/grc> as well.
+Install both tools:
+
+* `cgrc`: <https://github.com/carlonluca/cgrc/tree/master/cgrc-rust>
+* `grc`: <https://github.com/garabik/grc>
+
+The bundled custom configs are installed into your user `cgrc` config directory, so they appear in:
+
+```
+cgrc --list-configurations
+```
+
+At runtime the wrapper uses `cgrc` when a matching configuration exists, including bundled custom configs and embedded `cgrc` configs. It falls back to `grc` for the remaining supported commands.
 
 ### Default commands
 

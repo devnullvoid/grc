@@ -1,3 +1,4 @@
+desc=vmstat
 # Title
 regexp=(procs)\s(-+memory-+)\s(-+swap-+)\s(-+io-+)\s(-+system-+)\s(-+cpu-+)
 colours=default,bold,bold cyan,bold magenta,bold blue, bold green, bold red
